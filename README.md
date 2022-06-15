@@ -2,6 +2,9 @@
 ### Metrics and evaluation code for coreference resolution
 Defaults to the CONLL standard (MUC, B^3 and CEAFE), but also supports LEA.
 
+# installation
+`pip install coreference-eval`
+
 # run options
 ## 1. as a command-line tool:
 `python -m corefeval -h`
