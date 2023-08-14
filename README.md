@@ -14,15 +14,12 @@ pip install coreference-eval
 You can use the package as a command-line tool or as a Python module.
 
 ### Command-line Tool
-
-To use the command-line tool:
-
 ```bash
 python -m corefeval -h
 python -m corefeval --pred /path/to/pred.jsonl --gold /path/to/gold.jsonl
 ```
 
-The --clusters option allows you to specify the key under which coreference chains/clusters are stored in the JSONLine objects. By default, it's set to "clusters".
+The --clusters option lets you specify the key under which coreference chains/clusters are stored in the JSONLine objects. By default, it's set to "clusters".
 
 If you have a different key, you can specify it as follows:
 ```
@@ -30,8 +27,6 @@ python -m corefeval --pred /path/to/pred.jsonl --gold /path/to/gold.jsonl --clus
 ```
 
 ### As a Module
-
-Here is how you can use the package as a Python module:
 
 ```python
 from corefeval import get_metrics
@@ -47,7 +42,7 @@ get_metrics(pred, gold)
 
 ### `Document` Class
 
-The `Document` class represents a document with predicted and gold coreference clusters. This class offers useful methods to work with coreference clusters.
+The `Document` class represents a document with predicted and gold coreference clusters.
 
 ```python
 from corefeval import Document
@@ -57,7 +52,7 @@ doc = Document(predicted=pred, truth=gold)
 
 ### `Scorer` Class
 
-The `Scorer` class is used to compute the coreference evaluation metrics.
+The `Scorer` class is used to hold values from a Document object.
 
 ```python
 from corefeval import Scorer
@@ -70,7 +65,7 @@ conll_f1, metrics = scorer.detailed_score(modelname="model", dataset="dataset", 
 
 ### `Metric` Class
 
-The `Metric` class is used to calculate precision, recall, and F1 score for a given coreference evaluation metric.
+The `Metric` class calculates precision, recall, and F1 score for a given coreference evaluation metric.
 
 ```python
 from corefeval.metrics import Metric, ceafe
